@@ -1,5 +1,9 @@
+import { useState } from "react";
 function Nav() {
-  const handleLanguage = (e: React.ChangeEvent<HTMLSelectElement>): void => {};
+  const [language, setLanguage] = useState("");
+  const handleLanguage = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    setLanguage(e.target.value);
+  };
   return (
     <div className="navMain">
       <div className="title">Climate</div>

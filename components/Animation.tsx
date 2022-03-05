@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
-import {
-  Animate,
-  AnimateKeyframes,
-  AnimateGroup,
-  useAnimate,
-} from "react-simple-animate";
+import React, { useState } from "react";
+import { Animate, AnimateGroup } from "react-simple-animate";
 import CustomRadio from "./CustomRadio";
 import Slide from "./Slide";
 
-export default () => {
+function Animation() {
   const [selected, setSelected] = useState("one");
   const handleRadioBtn = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSelected(e.target.value);
@@ -62,4 +57,5 @@ export default () => {
       </Slide>
     </>
   );
-};
+}
+export default Animation;
