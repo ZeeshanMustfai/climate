@@ -1,12 +1,7 @@
 function Nav() {
   const handleLanguage = (
-    e: React.DetailedHTMLProps<
-      SelectHTMLAttributes<HTMLSelectElement>,
-      HTMLSelectElement
-    >
-  ): void => {
-    console.log("value", e.target.value);
-  };
+    e: React.ChangeEventHandler<HTMLSelectElement>
+  ): void => {};
   return (
     <div className="navMain">
       <div className="title">Climate</div>
