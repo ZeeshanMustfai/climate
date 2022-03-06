@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Animate, AnimateGroup } from "react-simple-animate";
 import CustomRadio from "./CustomRadio";
 import Slide from "./Slide";
 
 function Animation() {
   const [selected, setSelected] = useState("one");
+
   const handleRadioBtn = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSelected(e.target.value);
   };
@@ -17,7 +18,7 @@ function Animation() {
           <Animate
             start={{ opacity: 0 }}
             end={{ opacity: 1 }}
-            sequenceIndex={0}
+            sequenceIndex={2}
           >
             <CustomRadio
               name="radioBtn"
@@ -43,7 +44,7 @@ function Animation() {
           <Animate
             start={{ opacity: 0 }}
             end={{ opacity: 1 }}
-            sequenceIndex={2}
+            sequenceIndex={0}
           >
             <CustomRadio
               name="radioBtn"
