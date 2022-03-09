@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Animate, AnimateGroup } from "react-simple-animate";
+import React, { useState } from "react";
 import CustomRadio from "./CustomRadio";
 import Slide from "./Slide";
 
 function Animation() {
-  const [selected, setSelected] = useState("one");
+  const [selected, setSelected] = useState("");
 
   const handleRadioBtn = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSelected(e.target.value);
@@ -14,47 +13,29 @@ function Animation() {
   return (
     <>
       <Slide>
-        <AnimateGroup play>
-          <Animate
-            start={{ opacity: 0 }}
-            end={{ opacity: 1 }}
-            sequenceIndex={2}
-          >
-            <CustomRadio
-              name="radioBtn"
-              label={"Electricity is measured in units called watts"}
-              onChange={handleRadioBtn}
-              value="one"
-              checked={isRadioSelected("one")}
-            />
-          </Animate>
-          <Animate
-            start={{ opacity: 0 }}
-            end={{ opacity: 1 }}
-            sequenceIndex={1}
-          >
-            <CustomRadio
-              name="radioBtn"
-              label={"Second One"}
-              onChange={handleRadioBtn}
-              value="two"
-              checked={isRadioSelected("two")}
-            />
-          </Animate>
-          <Animate
-            start={{ opacity: 0 }}
-            end={{ opacity: 1 }}
-            sequenceIndex={0}
-          >
-            <CustomRadio
-              name="radioBtn"
-              label={"Third One"}
-              onChange={handleRadioBtn}
-              value="third"
-              checked={isRadioSelected("third")}
-            />
-          </Animate>
-        </AnimateGroup>
+        <CustomRadio
+          name="radioBtn"
+          label={"Electricity is measured in units called watts"}
+          onChange={handleRadioBtn}
+          value="one"
+          checked={isRadioSelected("one")}
+        />
+
+        <CustomRadio
+          name="radioBtn"
+          label={"Second One"}
+          onChange={handleRadioBtn}
+          value="two"
+          checked={isRadioSelected("two")}
+        />
+
+        <CustomRadio
+          name="radioBtn"
+          label={"Third One"}
+          onChange={handleRadioBtn}
+          value="third"
+          checked={isRadioSelected("third")}
+        />
       </Slide>
     </>
   );
