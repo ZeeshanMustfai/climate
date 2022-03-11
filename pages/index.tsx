@@ -9,7 +9,7 @@ import AnimationTemplate from "../components/AnimationTemplate";
 const HomePage: React.FC = () => {
   const [selected, setSelected] = useState("");
   const [curr, setCurr] = useState(0);
-  const [answers, setAnsers] = useState<Array>([]);
+  const [answers, setAnsers] = useState<any>([]);
   const [isWelcom, setIsWelcom] = useState(false);
 
   const handleRadioBtn = (
@@ -23,9 +23,7 @@ const HomePage: React.FC = () => {
 
   const handleNext = () => {
     setCurr((prev) => prev + 1);
-    setAnsers((answers: any): string[] => {
-      return [...answers, selected];
-    });
+    setAnsers((answers: any) => [...answers, selected]);
 
     if (curr === DUMMY_QUESTIONS.length - 1) {
       setIsWelcom(true);
